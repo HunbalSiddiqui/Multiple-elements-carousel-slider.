@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="test.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="carousel-container">
+        <div class="carousel-inner">
+            <div class="track">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image1</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image2</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image3</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image4</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image5</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image6</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image7</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image8</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image9</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image10</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image11</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img">Image12</div>
+                        <div class="card-content">
+                            <div class="title">Title</div>
+                            <div class="price">Rs 245</div>
+                            <button class="card-btn">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <button class="button prev"><span class="material-icons">
+                    keyboard_arrow_left
+                </span></button>
+            <button class="button next"><span class="material-icons">
+                    keyboard_arrow_right
+                </span></button>
+        </div>
+    </div>
+
+
+
+    <script>
+        var next = document.querySelector(".next")
+        var prev = document.querySelector(".prev")
+        var track = document.querySelector(".track")
+        var carouselContainer = document.querySelector(".carousel-container")
+        let carouselWidth = document.querySelector(".carousel-container").offsetWidth
+
+        window.addEventListener("resize", () => {
+            carouselWidth = document.querySelector(".carousel-container").offsetWidth
+        })
+
+        let count = 0;
+        next.addEventListener("click", () => {
+            count++;
+            track.style.transform = `translateX(-${count*carouselWidth}px)`
+            prev.classList.add("show")
+            if (track.offsetWidth - (count * carouselWidth) < carouselWidth) {
+                next.classList.add("hide")
+            }
+        })
+        prev.addEventListener("click", () => {
+            count--;
+            track.style.transform = `translateX(-${count*carouselWidth}px)`
+            if (count === 0) {
+                prev.classList.remove("show")
+            }
+            next.classList.remove("hide")
+
+        })
+    </script>
+
+
+</body>
+
+</html>
